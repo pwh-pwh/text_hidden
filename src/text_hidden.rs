@@ -41,8 +41,12 @@ impl<C: Cipher, P: Pose> TextHidden<C, P> {
             Err("can not recover")
         } else {
             let idx_left = idx_left.unwrap();
-            let idx_right = idx_right.unwrap();
-            let key = &text[idx_left..idx_right + 1];
+            let mut idx_right = idx_right.unwrap();
+            let key = text
+                .chars()
+                .skip(idx_left)
+                .take(idx_right - idx_left + 1)
+                .collect::<String>();
             Ok(self
                 .cipher
                 .decrypt(decode_text_hidden(key, self.ch1, self.ch2).as_str()))
@@ -71,8 +75,8 @@ mod tests {
         let cipher = NoCipher;
         let pose = SimplePose::default();
         let text_hidden = TextHidden::new(cipher, pose, '\u{200B}', '\u{200C}');
-        let th = text_hidden.text_hidden("", "key");
+        let th = text_hidden.text_hidden("hello", "key");
         let result = text_hidden.text_recover(th.as_str());
-        assert_eq!(result.unwrap(), "hello");
+        assert_eq!(result.unwrap(), "key");
     }
 }
