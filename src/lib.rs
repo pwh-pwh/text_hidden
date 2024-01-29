@@ -1,3 +1,5 @@
+mod cipher;
+
 use std::fmt::Debug;
 use std::io::BufRead;
 
