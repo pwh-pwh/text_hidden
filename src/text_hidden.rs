@@ -41,7 +41,7 @@ impl<C: Cipher, P: Pose> TextHidden<C, P> {
             Err("can not recover")
         } else {
             let idx_left = idx_left.unwrap();
-            let mut idx_right = idx_right.unwrap();
+            let idx_right = idx_right.unwrap();
             let key = text
                 .chars()
                 .skip(idx_left)
