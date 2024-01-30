@@ -4,13 +4,11 @@ A hidden text field that can be used to hide text in a form.
 Can be used for some social software to hide and encrypt text communication, such as WeChat, QQ, and so on.
 
 ## Usage
-todo
-
-## Example
 Cargo.toml
 ```shell
 cargo add text_hidden
 ```
+## Example
 code
 ```rust
 fn main() {
