@@ -7,6 +7,7 @@ description = "A simple text hidden tool"
 license = "MIT"
 repository = "https://github.com/pwh-pwh/text_hidden"
 readme = "README.md"
+exclude = ["./idea/*"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
