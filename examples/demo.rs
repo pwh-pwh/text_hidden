@@ -1,12 +1,5 @@
-# Text Hidden
+use text_hidden::{NoCipher, SimplePose, TextHidden};
 
-A hidden text field that can be used to hide text in a form.
-
-## Usage
-todo
-
-## Example
-```rust
 fn main() {
     //加密方法
     let cipher = NoCipher;
@@ -19,10 +12,3 @@ fn main() {
     let result_str = result.unwrap();
     println!("解密后:{}长度:{}", result_str, result_str.len());
 }
-```
-效果
-```text
-加密后:hello​﻿‌﻿‌﻿​﻿‌﻿​﻿‌﻿‌﻿‍﻿​﻿‌﻿‌﻿​﻿​﻿‌﻿​﻿‌﻿‍﻿​﻿‌﻿‌﻿‌﻿‌﻿​﻿​﻿‌长度:158!
-解密后:key长度:3
-
-```

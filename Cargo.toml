@@ -2,6 +2,9 @@
 name = "text_hidden"
 version = "0.1.0"
 edition = "2021"
+authors = ["coderpwh"]
+description = "A simple text hidden tool"
+license = "MIT"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
