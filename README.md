@@ -7,6 +7,11 @@ Can be used for some social software to hide and encrypt text communication, suc
 todo
 
 ## Example
+Cargo.toml
+```shell
+cargo add text_hidden
+```
+code
 ```rust
 fn main() {
     //加密方法
