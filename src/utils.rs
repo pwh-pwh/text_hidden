@@ -22,7 +22,7 @@ fn binary_to_zero_width<T: AsRef<str>>(binary: T, ch1: char, ch2: char) -> Strin
             _ => '\u{200d}'.to_string(),
         })
         .collect::<Vec<String>>()
-        .join('\u{feff}'.to_string().as_str())
+        .join("")
 }
 
 pub fn encode_text_hidden<T: AsRef<str>>(text: T, ch1: char, ch2: char) -> String {
@@ -31,11 +31,11 @@ pub fn encode_text_hidden<T: AsRef<str>>(text: T, ch1: char, ch2: char) -> Strin
 
 fn zero_width_to_binary<T: AsRef<str>>(s: T, ch1: char, ch2: char) -> String {
     s.as_ref()
-        .split('\u{feff}')
+        .chars()
         .map(|character| {
-            if character.eq(ch1.to_string().as_str()) {
+            if character == ch1 {
                 '0'
-            } else if character.eq(ch2.to_string().as_str()) {
+            } else if character == ch2 {
                 '1'
             } else {
                 ' '
